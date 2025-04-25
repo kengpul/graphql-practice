@@ -65,31 +65,31 @@ export const MovieList = [
     {
         id: "1",
         name: "Inception",
-        yearOfPublucation: 2010,
+        yearOfPublication: 2010,
         isInTheaters: false
     },
     {
         id: "2",
         name: "Avengers: Endgame",
-        yearOfPublucation: 2019,
+        yearOfPublication: 2019,
         isInTheaters: false
     },
     {
         id: "3",
         name: "The Batman",
-        yearOfPublucation: 2022,
+        yearOfPublication: 2022,
         isInTheaters: true
     },
     {
         id: "4",
         name: "Interstellar",
-        yearOfPublucation: 2014,
+        yearOfPublication: 2014,
         isInTheaters: false
     },
     {
         id: "5",
         name: "Spider-Man: No Way Home",
-        yearOfPublucation: 2021,
+        yearOfPublication: 2021,
         isInTheaters: true
     }
 ];
