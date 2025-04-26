@@ -3,7 +3,7 @@ import _ from "lodash"
 
 const resolvers = {
     Query: {
-        users: () => {
+        users: (parent, args, context) => {
             return UserList;
         },
         user: (parent: unknown, args: { id: string }) => {
