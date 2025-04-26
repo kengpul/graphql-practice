@@ -4,7 +4,8 @@ import _ from "lodash"
 const resolvers = {
     Query: {
         users: (parent, args, context) => {
-            return UserList;
+            if (UserList) return { users: UserList }
+            return { message: "No users found" }
         },
         user: (parent: unknown, args: { id: string }) => {
             const id = args.id;
@@ -35,7 +36,7 @@ const resolvers = {
             return user;
         },
         updateUser: (parent: unknown, args: { input }) => {
-            const {id, newUsername} = args.input;
+            const { id, newUsername } = args.input;
             const user = _.find(UserList, { id });
             if (user) {
                 user.username = newUsername;
@@ -55,6 +56,13 @@ const resolvers = {
             }
         }
 
+    },
+    UsersResponse: {
+        __resolveType(obj: { "users": unknown[]; message: string }) {
+            if (obj.users) return "UsersResult";
+            if (obj.message) return "UsersError";
+            return null;
+        }
     }
 }
 
